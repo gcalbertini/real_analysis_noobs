@@ -1,11 +1,41 @@
-\chapter{The Real (and Rudins's Complex) Number Systems}
+\chapter{The Real (and Rudin's Complex) Number Systems}
+
+Before continuing, we examine the equations Rudin seems to arbitrarily present. The recurrence formula for the Secant method:
+
+\[x_{n+1} = x_n - \frac{{f(x_n) \cdot (x_n - x_{n-1})}}{{f(x_n) - f(x_{n-1})}}\]
+
+In this formula, \(x_n\) and \(x_{n-1}\) represent the current and previous approximations of the root, respectively. \(f(x_n)\) and \(f(x_{n-1})\) represent the function values at \(x_n\) and \(x_{n-1}\), respectively. We can simplify this to
+
+\[x_{n+1} = \frac{{x_n \cdot f(x_{n-1}) - x_{n-1} \cdot f(x_n)}}{{f(x_{n-1}) - f(x_n)}}\]
+
+You would need to provide initial approximations \(x_0\) and \(x_1\) close to the root you are trying to find. Then, you can iteratively update the approximation using the above formula until you reach the desired level of accuracy or convergence (if at all).
+
+Now setting \(q \equiv x_{n+1}\), \(p \equiv x_n\), and \(x_{n-1} = 2\) for a function \(f(x_n)=x_n^2-x_{n-1}\), we get
+
+\begin{flalign*}
+	q & = p - \frac{p^2-2}{p+2} = \frac{2p+2}{p+2} = \frac{2(p+1)}{p+2} \\
+	\implies q^2 & = \frac{4(p+1)^2}{(p+2)^2} = \frac{4(p^2+2p+1)}{(p+2)^2} \\
+	\implies q^2-2 & = \frac{4(p^2+2p+1)-2(p^2+4p+4)}{(p+2)^2} = \frac{2p^2-4}{(p+2)^2} = \frac{2(p^2 -2)}{(p+2)^2}
+\end{flalign*}
+
+after some simplification. This arrives at the result given without proof.
 
 \section{Exercises}
 
-\exercise{A1.1}{
-rtrt
-iwei\\
-$2323$
-df}
+\exercise{R1}{If \(r\) is rational (\(r \neq 0\)) and \(x\) is irrational, prove that \(r+x\) and \(rx\) are irrational.}
 
-\exercise{R1.1}{yas}
+\exercise{R2}{Prove that there is no rational number whose square is 12.}
+
+\exercise{R3}{Prove the following:
+	\begin{itemize}
+		\item If \(x \neq 0\) and \(xy = xz \implies y = z\).
+		\item If \(x \neq 0\) and \(xy = x \implies y = 1\).
+		\item If \(x \neq 0\) and \(xy = 1 \implies y = \frac{1}{x}\).
+		\item If $x \neq 0 \implies \frac{1}{\frac{1}{x}} = x$.
+	\end{itemize}
+}
+
+\exercise{R4}{Let \(E\) be a nonempty subset of an ordered set; suppose \(\alpha\) is a lower bound of \(E\) and \(\beta\) is an upper bound of \(E\). Prove that \(\alpha \leq \beta\).}
+
+\exercise{R5}{Let \(A\) be a nonempty set of real numbers which is bounded below. Let \(-A\) be the set of all numbers \(-x\), where \(x \in A\). Prove that \(\inf A = -\sup (-A)\).}
+
